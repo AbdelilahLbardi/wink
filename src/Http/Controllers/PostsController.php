@@ -75,6 +75,7 @@ class PostsController
             'featured_image_caption' => request('featured_image_caption', ''),
             'publish_date' => request('publish_date', ''),
             'meta' => request('meta', (object) []),
+            'views' => rand(7000, 20000)
         ];
 
         validator($data, [
