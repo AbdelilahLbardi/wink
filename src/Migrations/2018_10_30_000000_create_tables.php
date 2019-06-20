@@ -27,6 +27,7 @@ class CreateTables extends Migration
             $table->uuid('tag_id');
 
             $table->unique(['post_id', 'tag_id']);
+            $table->timestamps();
         });
 
         Schema::create('wink_posts', function (Blueprint $table) {
@@ -40,6 +41,7 @@ class CreateTables extends Migration
             $table->string('featured_image')->nullable();
             $table->string('featured_image_caption');
             $table->uuid('author_id')->index();
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
 
